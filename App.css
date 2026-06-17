@@ -1,8 +1,30 @@
 .title{
-    display: flex;
-    justify-content: center;
-    border: solid black
+    margin: 0 auto;
+    
+    width: 300px;
 }
 .main{
-    border: solid black
+    
+    margin: 0 auto;
+    width: 300px;
+}
+
+.randomize{
+    
+    display: flex;
+    justify-content: center;
+    width: 300px;
+}
+
+.randomButton{
+    border: none;
+    background-color: yellow;
+    color: red;
+    
+}
+
+.resttitle{
+    display: flex;
+    justify-content: center;
+    width: 300px;
 }
