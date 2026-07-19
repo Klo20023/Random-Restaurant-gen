@@ -54,9 +54,14 @@ const namePlacement = document.querySelector('.restaurantName')
 
 form.addEventListener('submit', function(e){
     e.preventDefault()
+    const Listed = document.querySelector('.Restaurant')
     const restaurantPicked = restaurauntList[randomNumber()]
     const newDiv = document.createElement('DIV')
+    if (Listed){
+        Listed.remove()
+    }
     newDiv.append(restaurantPicked.restaurant)
+    newDiv.classList.add("Restaurant")
     namePlacement.append(newDiv)
     
 })
