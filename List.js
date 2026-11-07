@@ -42,26 +42,55 @@ const restaurauntList = [
 {restaurant : 'steakhouse outback' },
 {restaurant : 'Pinnacle peaks.'}
 ]
-function randomNumber(){
+
+const degradation = ["Are you sure about that?", "Do they have Salads?", "Did you put on some weight?", "Again?", "Your ancestors are watching"]
+
+
+function randomRestaurant(){
     const number = Math.random() * restaurauntList.length
     return Math.round(number)
+}
+
+function randomInsult(){
+    const number = Math.random() * degradation.length
+    console.log(Math.round(number))
+    return Math.round(number) - 1
 }
 
 const form = document.querySelector('.randomize')
 const namePlacement = document.querySelector('.restaurantName')
 
 
+// form.addEventListener('submit', function(e){
+//     e.preventDefault()
+//     const Listed = document.querySelector('.Restaurant')
+//     const restaurantPicked = restaurauntList[randomNumber()]
+//     const newDiv = document.createElement('DIV')
+//     if (Listed){
+//         Listed.remove()
+//     }
+//     newDiv.append(restaurantPicked.restaurant)
+//     newDiv.classList.add("Restaurant")
+//     namePlacement.append(newDiv)
+    
+// })
 
-form.addEventListener('submit', function(e){
+form.addEventListener('submit',function(e){
     e.preventDefault()
-    const Listed = document.querySelector('.Restaurant')
-    const restaurantPicked = restaurauntList[randomNumber()]
-    const newDiv = document.createElement('DIV')
+    const Listed = document.querySelector('.result')
+    const restaurantPicked = restaurauntList[randomRestaurant()]
+    const resultDIV = document.createElement('DIV')
+    const insultDIV = document.createElement('DIV')
     if (Listed){
         Listed.remove()
     }
-    newDiv.append(restaurantPicked.restaurant)
-    newDiv.classList.add("Restaurant")
-    namePlacement.append(newDiv)
+    
+    resultDIV.classList.add('result')
+    resultDIV.append((restaurantPicked.restaurant))
+    namePlacement.append(resultDIV)
+
+    insultDIV.classList.add('insult')
+    insultDIV.append(degradation[randomInsult()])
+    resultDIV.append(insultDIV)
     
 })

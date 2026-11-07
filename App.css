@@ -1,10 +1,17 @@
+body{
+    background-color: rgb(54, 54, 54);
+}
+
 .title{
     margin: 0 auto;
-    
-    width: 300px;
+    border: solid black;
+    width: 350px;
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 1px 2.4px yel;
 }
 .main{
-    
+    border: solid green;
     margin: 0 auto;
     width: 300px;
 }
@@ -18,8 +25,8 @@
 
 .randomButton{
     border: none;
-    background-color: yellow;
-    color: red;
+    background-color: rgb(70, 70, 70);
+    color: yellow;
     
 }
 
@@ -27,8 +34,15 @@
     display: flex;
     justify-content: center;
     width: 300px;
+    color: red;
 }
 
-.Restaurant{
+.result{
     font-size: 2em;
+    color: red;
+
+}
+
+.insult{
+    color:yellow
 }
