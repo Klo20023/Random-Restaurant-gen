@@ -48,7 +48,7 @@ const degradation = ["Are you sure about that?", "Do they have Salads?", "Did yo
 
 function randomRestaurant(){
     const number = Math.floor(Math.random() * restaurauntList.length)
-    return Math.round(number)
+    return restaurauntList[number].restaurant
 }
 
 function randomInsult(){
@@ -77,7 +77,6 @@ const namePlacement = document.querySelector('.restaurantName')
 form.addEventListener('submit',function(e){
     e.preventDefault()
     const Listed = document.querySelector('.result')
-    const restaurantPicked = restaurauntList[randomRestaurant()]
     const resultDIV = document.createElement('DIV')
     const insultDIV = document.createElement('DIV')
     if (Listed){
@@ -85,7 +84,7 @@ form.addEventListener('submit',function(e){
     }
     // create's Result Container and append's result
     resultDIV.classList.add('result')
-    resultDIV.append((restaurantPicked.restaurant))
+    resultDIV.append(randomRestaurant())
     namePlacement.append(resultDIV)
     // creates class insult and appends to resultDIV
     insultDIV.classList.add('insult')
