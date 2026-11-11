@@ -47,14 +47,13 @@ const degradation = ["Are you sure about that?", "Do they have Salads?", "Did yo
 
 
 function randomRestaurant(){
-    const number = Math.random() * restaurauntList.length
+    const number = Math.floor(Math.random() * restaurauntList.length)
     return Math.round(number)
 }
 
 function randomInsult(){
-    const number = Math.random() * degradation.length
-    console.log(Math.round(number))
-    return Math.round(number) - 1
+    const number = Math.floor(Math.random() * degradation.length)
+    return degradation[number]
 }
 
 const form = document.querySelector('.randomize')
@@ -84,13 +83,13 @@ form.addEventListener('submit',function(e){
     if (Listed){
         Listed.remove()
     }
-    
+    // create's Result Container and append's result
     resultDIV.classList.add('result')
     resultDIV.append((restaurantPicked.restaurant))
     namePlacement.append(resultDIV)
-
+    // creates class insult and appends to resultDIV
     insultDIV.classList.add('insult')
-    insultDIV.append(degradation[randomInsult()])
+    insultDIV.append(randomInsult())
     resultDIV.append(insultDIV)
     
 })
